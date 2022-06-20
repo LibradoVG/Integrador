@@ -1,0 +1,53 @@
+venta_productos = [
+[2, 122],
+[1, 89],
+[1, 22],
+[3, 48],
+[1, 75],
+[3, 322],
+[2, 95],
+[1, 148],
+[1, 83],
+[3, 100]
+]
+venta_productos2 = [[],[]]
+
+
+idProducto = [1, 2, 3]
+TipoProducto = ["Maiz grano", "Pepino", "Tomate verde"]
+CostoCaja = [285.55, 334.72, 129.0]
+
+ObtenerCajas = input("Numero de cajas a vender: ")
+ObtenerID = input("ID del producto: ")
+Total = CostoCaja[int(ObtenerID)-1] * int(ObtenerCajas)
+
+venta_productos.append([int(ObtenerID), int(ObtenerCajas)])
+
+
+TamañoLista = len(venta_productos)
+#while hasta que sea igual al tamaño de la lista
+variable = 0
+T=0
+while variable < TamañoLista:
+  T = (venta_productos[variable][1]) + (T)
+  variable +=1
+
+SumaCaja = venta_productos[0][1]
+
+if(int(ObtenerCajas) <=100):
+  Total = Total+ 1500
+else:
+  Total = Total
+
+if(T>1500):
+  Descuento = (Total*20)/100
+else:
+  Descuento = 0
+
+Total = Total - Descuento
+print("El producto es: " + TipoProducto[int(ObtenerID)-1])
+
+print("El precio por caja es: " + str(CostoCaja[int(ObtenerID)-1]))
+print("Aplica el descuento: " + str(T>1500))
+print("El total a pagar es: "+ str(Total))
+print(T)
